@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const BASE = import.meta.env.VITE_API_URL ?? ''
-export const api = axios.create({ baseURL: `${BASE}/api` })
+export const api = axios.create({ baseURL: BASE })
 
 // --- Types ---
 export interface Category { id: number; name: string }
