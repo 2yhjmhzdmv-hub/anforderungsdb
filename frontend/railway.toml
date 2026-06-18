@@ -1,6 +1,7 @@
 [build]
-builder = "NIXPACKS"
-buildCommand = "npm install && npm run build"
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+buildArgs = { VITE_API_URL = "${{VITE_API_URL}}" }
 
 [deploy]
-startCommand = "npx serve -s dist -p 3000"
+startCommand = "nginx -g 'daemon off;'"
